@@ -9,8 +9,8 @@ export class CatsController {
     }
 
     @Get()
-    findAll(): string {
-        return 'This action return all cats'
+    async findAll(): Promise<any[]> {
+        return [];
     }
 
     @Get(':id')
