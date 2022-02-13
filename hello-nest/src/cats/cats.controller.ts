@@ -1,10 +1,9 @@
-import { Controller, Get, Post, Param } from '@nestjs/common';
-import { getDefaultWatermarks } from 'istanbul-lib-report';
-
+import { Controller, Get, Post, Param, Body } from '@nestjs/common';
+import { CreateCatDto } from 'src/dto/create-cat.dto';
 @Controller('cats')
 export class CatsController {
     @Post()
-    create(): string {
+    async create(@Body() createCatDto: CreateCatDto) {
         return 'This action adds a new cat';
     }
 
