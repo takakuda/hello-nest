@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Param, Body, HttpException, HttpStatus } from '@nestjs/common';
+import { Controller, Get, Post, Param, Body, HttpException, HttpStatus, ForbiddenException } from '@nestjs/common';
 import { CreateCatDto } from 'src/dto/create-cat.dto';
 import { CatsService } from './cats.service';
 import { Cat } from './interfaces/cat.interface';
@@ -14,6 +14,6 @@ export class CatsController {
 
     @Get()
     async findAll() {
-        throw new HttpException('Forbidden', HttpStatus.FORBIDDEN)
+        throw new ForbiddenException
     }
 }
